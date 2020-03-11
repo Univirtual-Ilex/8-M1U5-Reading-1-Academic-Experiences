@@ -3,7 +3,7 @@ import Ilex from '../../App/variables'
 const styles = css`
 position: absolute;
 z-index:500;
-top: 15%;
+top: 0;
 left: 0;
 right:0;
 font-size:0.7em;

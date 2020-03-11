@@ -88,62 +88,62 @@ const Actividad_base =  ({staticContext,...props}) => {
         }
     }
     const images = img.map((item, index) => {
-                            return(
-                                <DraggableItem elementId={index} key={index} setStatus={setStatusCheck} draggable={'draggable_' + index} idArr={index} areaDrag={'#area'} target={item.belongsTo}  ref={[area_0_1, area_0_2, area_0_3, area_0_4, area_1_1, area_1_2, area_1_3, area_1_4, area_1_5]}>
-                                    <div className="boxes"  >
-                                        <img src={item.img} alt="Img para arrastrar" />
-                                    </div>
-                                </DraggableItem>
-                            )
-                        })
+        return(
+            <DraggableItem elementId={index} key={index} setStatus={setStatusCheck} draggable={'draggable_' + index} idArr={index} areaDrag={'#area'} target={item.belongsTo}  ref={[area_0_1, area_0_2, area_0_3, area_0_4, area_1_1, area_1_2, area_1_3, area_1_4, area_1_5]}>
+                <div className="boxes"  >
+                    <img src={item.img} alt="Img para arrastrar" />
+                </div>
+            </DraggableItem>
+        )
+    })
     
     const personas = data.map((item, index) => {
-                        return(
-                                <ICol className={"square float_" + index} key={index} w={45} >
-                                    <div className={'person ' + item.student } onClick={() => mostrar(index)}>
-                                    </div>
-                                    <IRow className={'float_'} >
-                                        {
-                                            item.targets.map((target, i) => {
-                                                return (
-                                                    <ICol  key={i} className="box" data-selected={''} data-target={'area_' + index + '_' + target}   target={'area_' + index + '_' +target} id={'area_' + index + '_' +target} ref={eval('area_' + index + '_' +target)}>
-                                                    </ICol>
-                                                )
-                                            })
-                                        }
-                                    </IRow>
-                                    <div >
-                                        <Tooltip visible={eval('visible' + index)} onClick={() => mostrar(index)} > {item.tooltip} </Tooltip>
-                                    </div>
-                                </ICol>
-                                   
-                            
-                            )
-                    })
+        return(
+                <ICol className={"square float_" + index } key={index} w={47}  >
+                    <ICol className={'person ' + item.student + " position-relative" } onClick={() => mostrar(index)}>
+                        <Tooltip className="tooltip" visible={eval('visible' + index)} onClick={() => mostrar(index)} > {item.tooltip} </Tooltip>
+                    </ICol>
+                    <IRow justify="center" gutters={0.2} valign="center" className="align-content">
+                        {
+                            item.targets.map((target, i) => {
+                                return (
+                                    <ICol  mb={0.5} key={i} className="box" data-selected={''} data-target={'area_' + index + '_' + target}   target={'area_' + index + '_' +target} id={'area_' + index + '_' +target} ref={eval('area_' + index + '_' +target)}>
+                                    </ICol>
+                                )
+                            })
+                        }
+                    </IRow>
+
+                       
+
+                </ICol>
+            )
+        })
+
     return (
         <Container bgImage='./src/bg_actividad1.png' id="area" {...props} h={40} w={85} >
-            
+
             <UiButtonsContainer>
                 <ButtonUi icon='ilx-ayuda' tooltip='click on each of the characters, read the description and locate the images' />
                 <ButtonUi icon='ilx-volver' tooltip='Start Again' />
             </UiButtonsContainer>
             <IRow pt={1.5}>
-                <ICol py={ 3 }>
+                <ICol py={ 1.5 }>
                     <MainTitle color={Ilex.violeta2} size={1.5}>
                     READ THE ROUTINES OF DIFFERENT STUDENTS AND THEN ASSOCIATE THE IMAGES CORRESPONDINGLY
                     </MainTitle>  
                 </ICol>
             </IRow>
 
-            <IRow justify='center' align='center' w={100} gutters={0.5}>
-                <IRow w={90} className="mlFirstChild" pl={5} >
+            <IRow justify='center' align='center' gutters={0.5}>
+                <IRow className="mlFirstChild" justify="center" >
                     {personas}
                 </IRow>
-                <IRow pl={2} pt={3} gutters={1} >
+                <IRow px={1} pt={2} gutters={0.6} justify="center" >
                     {images}
                 </IRow>
                 <IRow>
-                    <ICol pt={2.5}><ButtonCheck onClick={checkActivity} /></ICol>
+                    <ICol mt={5}><ButtonCheck onClick={checkActivity} /></ICol>
                 </IRow>
 
             </IRow>

@@ -20,35 +20,43 @@ const Container_base = ({ h, w, bgImage, row,...props}) => { // se traen los pro
 
 const Container = styled(Container_base)`
 
+display: flex;
+justify-content: center;
+align-items:center;
+height:100%;
+overflow-y:auto;
+
+.viewport{
+    box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.15);
+    width:${ props => props.w ? props.w : 68.8125 }em;
+    height:${ props => props.h ? props.h : 32.625 }em;
+    min-width:${ props => props.w ? props.w : 68.8125 }em;
+    min-height:${ props => props.h ? props.h : 32.625 }em;
+    border-radius: 0.5em;
+    background-color: #fff;
+    box-sizing: border-box;
+    position:relative;
+}
+
+
+.row{
     display: flex;
-    justify-content: center;
-    align-items:center;
-    height:100%;
+}
 
-    .viewport{
-        box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.15);
-        width:${ props => props.w ? props.w : 68.8125 }em;
-        height:${ props => props.h ? props.h : 32.625 }em;
-        min-width:${ props => props.w ? props.w : 68.8125 }em;
-        min-height:${ props => props.h ? props.h : 32.625 }em;
-        border-radius: 0.5em;
-        background-color: #fff;
-        box-sizing: border-box;
-        position:relative;
-    }
+.bgImage{
+    background-image: url(${(props)=> props.bgImage });
+    background-position:right top;
+    background-repeat:no-repeat;
+    background-size: cover;
+}
 
-
-    .row{
-        display: flex;
-    }
-
-    .bgImage{
-        background-image: url(${(props)=> props.bgImage });
-        background-position:right top;
-        background-repeat:no-repeat;
-        background-size: cover;
-    }
-
+@media screen and (max-height: 1080px) {
+    align-items:start;
+    position:relative;
+    padding-top: 6em;
+    padding-bottom: 6em;
+}
 `
+
 
 export default Container

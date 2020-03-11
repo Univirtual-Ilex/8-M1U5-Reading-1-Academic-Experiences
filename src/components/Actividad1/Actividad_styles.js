@@ -3,9 +3,9 @@ import styled, {css} from 'styled-components'
 import Ilex from '../../App/variables'
 // eslint-disable-next-line
 import animations from './Actividad_animations'
-const area = 150
-const cols = 4 // Celdas horizontales son 4 items
-const rows = 3 // Celdas verticales son 1 fila
+const area = 240
+const cols = 2 // Celdas horizontales son 4 items
+const rows = 2 // Celdas verticales son 1 fila
 const spriteX = area * cols
 const mistyles = css`
 
@@ -52,41 +52,37 @@ const mistyles = css`
     display: flex;
     background-color: #eee;
     border-radius: 0.5em;
+    box-sizing: border-box;
+    padding:1em;
 }
 
 .float_1{
     margin-left: 1em;
 }
 .person{
-    width:${area}px;
+    min-width:${area}px;
     height:${area}px;
+    width:${area}px;
     display: flex;
 
     margin:0.2em 0;
-    background-image: url(./src/sprite.png); 
+    background-image: url(./src/sprite240x240.png); 
     background-size: ${ area * cols}px ${ area * rows}px;
     cursor: pointer;
+    &:hover{
+        background-position-y: ${area}px;
+    }
    
-    &.Natalia{
-        background-position-x: -7px;
-        &:hover{
-            
-        }
-    }
     &.Julio{
-        background-position-x:-150px;
+        background-position-x:0px;
+        margin-left: -1em;
         &:hover{
-            
         }
     }
-    &.Gabriela{
-        background-position-x:-300px;
-        &:hover{
-            
-        }
-    }
+
     &.Sergio{
-        background-position-x: -450px;
+        background-position-x: -${area}px;
+        margin-left: -2em;
         &:hover{
             
         }
@@ -121,12 +117,17 @@ const mistyles = css`
     margin-left: 0.2em;
 }
 .box{
-    margin: auto;
+
     background-color: #CCCCCC;
     border-radius:0.5em;
-    width:8em;
+    width:115px;
     height:6em;
-    margin-bottom:2em;
+}
+.align-content{
+    align-content:center ;
+}
+.position-relative{
+    position:relative
 }
 `
 
