@@ -12,7 +12,7 @@ const Home_base = function ({...props}) { // se le pasan las props para recibir 
     return (
         <Container {...props}  row bgImage="src/bg.png">
 
-                    <div className='bloque-izquierdo'>
+                    <div className='bloque-izquierdo entrada-top-Y-2'>
                         <div className='bloque-izquierdo-container'>
                             <h1> Academic experiences </h1>
                             <p>Read the texts about two people talking about their academic experiences. Match the images with the corresponding person.
@@ -20,7 +20,7 @@ const Home_base = function ({...props}) { // se le pasan las props para recibir 
                             <ButtonLink to='/actividad1'>Start</ButtonLink>
                         </div>
                     </div>
-                    <ICol className='bloque-derecho' mt={6}>
+                    <ICol className='bloque-derecho entrada-top-Y-3' mt={6}>
                         <figure>
                             <img src='./src/cover.png' alt='Logo' />    
                         </figure>

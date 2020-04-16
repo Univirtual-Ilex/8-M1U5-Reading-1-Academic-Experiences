@@ -5,7 +5,7 @@ import Fondo from './components/Fondo'
 import Modal from './components/Generales/Modal'
 import Gstyle from './App/gstyle' // Estilos globales
 import Ilex from './App/variables' //Variables
-import {BrowserRouter, Route } from 'react-router-dom'
+import {HashRouter, Route } from 'react-router-dom'
 
 // Actividades
 // Actividad 1
@@ -52,10 +52,10 @@ const App = () => {
     <>
       <Gstyle/>
       <Fondo degradado={Ilex.degradado('90deg',Ilex.azul,Ilex.verde)}>
-        <BrowserRouter>
+        <HashRouter>
           <Route path='/' exact  component={Home} />
           <Route path='/actividad1'  component={Actividad1} />
-        </BrowserRouter>
+        </HashRouter>
       </Fondo>
       <Modal w='30'>
       </Modal>
