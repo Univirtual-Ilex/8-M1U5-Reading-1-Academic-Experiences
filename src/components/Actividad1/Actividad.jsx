@@ -130,7 +130,7 @@ const Actividad_base =  ({staticContext,...props}) => {
             <IRow pt={1.5}>
                 <ICol py={ 1.5 }>
                     <MainTitle color={Ilex.violeta2} size={1.5}>
-                    READ THE ROUTINES OF DIFFERENT STUDENTS AND THEN ASSOCIATE THE IMAGES CORRESPONDINGLY
+                    READ THE TEXTS ABOUT TWO PEOPLE TALKING ABOUT THEIR ACADEMIC EXPERIENCES. MACTH THE IMAGES WITH THE CORRESPONDING PERSON.
                     </MainTitle>  
                 </ICol>
             </IRow>
